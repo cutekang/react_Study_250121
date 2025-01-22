@@ -1,7 +1,6 @@
 // import logo from './logo.svg';
 import './App.css';
-import Colors from './day01/state/Colors';
-
+import CheckMessage from './day02/ref/exepert/CheckMessage';
 
 // import Jsx01 from './day01/basic/Jsx01';
 // import Jsx02 from './day01/basic/Jsx02';
@@ -12,6 +11,14 @@ import Colors from './day01/state/Colors';
 // import Count from './day01/state/Count';
 // import Sound from './day01/state/Sound';
 // import Name from './day01/state/Name';
+// import Colors from './day01/state/Colors';
+// import SportsContainer from './day02/map/basic/SportsContainer';
+// import FoodContainer from './day02/map/basic/FoodContainer';
+// import UserContainer from './day02/map/expert/UserContainer';
+// import NameRef from './day02/ref/basic/NameRef';
+// import Validation from './day02/ref/basic/Validation';
+// import Check from './day02/ref/basic/Check';
+// import FoodContainer from './day02/ref/exepert/FoodContainer';
 
 function App() {
   return (
@@ -25,7 +32,17 @@ function App() {
       {/* <Count /> */}
       {/* <Sound /> */}
       {/* <Name /> */}
-      <Colors />
+      {/* <Colors /> */}
+
+      {/* DAY 02 */}
+      {/* <SportsContainer /> */}
+      {/* {<FoodContainer />} */}
+      {/* <UserContainer /> */}
+      {/* <NameRef /> */}
+      {/* <Validation /> */}
+      {/* <Check /> */}
+      {/* <FoodContainer /> */}
+      <CheckMessage />
     </>
   );
 }
