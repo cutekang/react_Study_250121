@@ -2,38 +2,74 @@ import React, { useRef, useState } from 'react';
 import FoodList from './FoodList';
 
 const FoodContainer = () => {
-    const inputRef = useRef([])
-
-    const [totalResult,setTotalResult] = useState([])
+    const inputRef = useRef([]);
+    const [totalResult, setTotalResult] = useState([]);
 
     const onClickAdd = () => {
-        let result = totalResult;
+        const koreanFood = inputRef.current[0]?.value;
+        const englishFood = inputRef.current[1]?.value;
 
-        result.push(`${inputRef.current[0].value} (${inputRef.current[1].value})`)
+        if (koreanFood && englishFood) {
+            setTotalResult((prevResult) => [
+                ...prevResult,
+                { food: `${koreanFood} (${englishFood})`, checked: false }
+            ]);
+            inputRef.current[0].value = '';
+            inputRef.current[1].value = '';
+        }
+    };
 
-        setTotalResult(result);
-        console.log(totalResult)
-    }
-    
+    const handleCheck = (index) => {
+        setTotalResult((prevResult) =>
+            prevResult.map((item, i) =>
+                i === index ? { ...item, checked: !item.checked } : item
+            )
+        );
+    };
+
+    const onClickDeleteChecked = () => {
+        setTotalResult((prevResult) => prevResult.filter((item) => !item.checked));
+    };
+
+    const resultList = totalResult.map((item, index) => (
+        <FoodList
+            food={item.food}
+            checked={item.checked}
+            index={index}
+            key={index}
+            onCheck={handleCheck}
+        />
+    ));
 
     return (
         <div>
             <div>
-                <input ref={(el) => {inputRef.current[0] = el}} type="text" placeholder='한국 음식 이름'/>
-                <input ref={(el) => {inputRef.current[1] = el}} type="text" placeholder='영어 음식 이름'/>
+                <input
+                    ref={(el) => {
+                        inputRef.current[0] = el;
+                    }}
+                    type="text"
+                    placeholder="한국 음식 이름"
+                />
+                <input
+                    ref={(el) => {
+                        inputRef.current[1] = el;
+                    }}
+                    type="text"
+                    placeholder="영어 음식 이름"
+                />
             </div>
             <div>
                 <button onClick={onClickAdd}>추가</button>
-                <button>삭제</button>
+                <button onClick={onClickDeleteChecked}>삭제</button>
             </div>
             <div>
-                <ul>
-                    {totalResult.map((foods, index) => <FoodList food={foods} key={index}/>)}
-                </ul>
+                <ul style={{ listStyleType: 'none' }}>{resultList}</ul>
             </div>
         </div>
     );
 };
+
 export default FoodContainer;
 
 // 강사님 풀이
