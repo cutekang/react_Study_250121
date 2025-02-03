@@ -20,7 +20,7 @@ import './App.css';
 // import NameRef from './day02/ref/basic/NameRef';
 // import Validation from './day02/ref/basic/Validation';
 // import Check from './day02/ref/basic/Check';
-import FoodContainer from './day02/ref/exepert/FoodContainer';
+// import FoodContainer from './day02/ref/exepert/FoodContainer';
 
 // day 03
 // import CheckMessage from './day02/ref/exepert/CheckMessage';
@@ -28,6 +28,15 @@ import FoodContainer from './day02/ref/exepert/FoodContainer';
 // import SideEffectMount from './day03/life-cycle/function/side-effect/SideEffectMount';
 // import SideEffect from './day03/life-cycle/function/side-effect/SideEffect';
 // import SideEffectTask01 from './day03/life-cycle/function/side-effect/SideEffectTask01';
+
+// day 04
+// import ProductContainer from './day04/life-cycle/function/side-effect/memoization/ProductContainer';
+
+// day 05
+// import CharContainer from './day05/context/basic/CharContainer';
+// import ParentContainer from './day05/context/basic/ParentContainer';
+// import NormalContainer from './day05/context/normal/NormalContainer';
+import AnimalsContainer from './day05/context/expert/AnimalsContainer';
 
 function App() {
   return (
@@ -51,7 +60,7 @@ function App() {
       {/* <NameRef /> */}
       {/* <Validation /> */}
       {/* <Check /> */}
-      <FoodContainer />
+      {/* <FoodContainer /> */}
       {/* <CheckMessage /> */}
 
       {/* Day 03 */}
@@ -59,6 +68,15 @@ function App() {
       {/* <SideEffectMount /> */}
       {/* <SideEffect /> */}
       {/* <SideEffectTask01 /> */}
+
+      {/* Day 04 */}
+
+      {/* Day 05 */}
+      {/* <ProductContainer /> */}
+      {/* <CharContainer /> */}
+      {/* <ParentContainer /> */}
+      {/* <NormalContainer /> */}
+      <AnimalsContainer />
     </>
   );
 }
